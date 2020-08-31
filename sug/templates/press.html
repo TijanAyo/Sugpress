@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %} Sug Press News {% endblock %}
+
+{% block body %}
+    {% for posts in post %}
+        <article class="media content-section">
+            <div class="media-body">
+                <a class="mr-2" href="#">{{ posts.author }}</a>
+                <h4><a class="article-title" href="#">{{ posts.title }}</a></h4>
+                <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
+                <div class="article-metadata">
+                    <span class="badge badge-success">{{posts.date_posted}}</span>
+                </div>
+            </div>
+        </article>
+                
+    {% endfor %}
+
+    <style>
+        .content-section
+        {
+        background: #ffffff;
+        padding: 10px 20px;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        }
+        
+        .article-title
+        {
+        color: black;
+        }
+        
+        a.article-title:hover
+        {
+        color: #5812c5;
+        text-decoration: none;
+        }
+        
+        .article-content
+        {
+        white-space: pre-line;
+        }
+
+        .mr-2
+        {
+        text-decoration: none;
+        }
+
+        .article-img {
+        height: 65px;
+        width: 65px;
+        margin-right: 16px;
+        }
+
+        .article-metadata {
+        padding-bottom: 1px;
+        margin-bottom: 4px;
+        border-bottom: 1px solid #e3e3e3
+        }
+
+        .article-metadata a:hover {
+        color: #333;
+        text-decoration: none;
+        }
+
+        .article-svg {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+        }
+
+        .account-img {
+        height: 125px;
+        width: 125px;
+        margin-right: 20px;
+        margin-bottom: 16px;
+        }
+
+        .account-heading {
+        font-size: 2.5rem;
+        }
+
+    </style>
+{% endblock %}
