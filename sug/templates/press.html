@@ -2,7 +2,7 @@
 {% block title %} Sug Press News {% endblock %}
 
 {% block body %}
-    {% for posts in post %}
+    {% for posts in Post %}
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
@@ -10,7 +10,7 @@
                 </div>
                 <h4><a class="article-title" href="#">{{ posts.title }}</a></h4>
                 <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
-                <span class="badge badge-success">{{posts.date_posted}}</span>
+                <span class="badge badge-success">{{posts.date_posted|date:"F j, Y"}}</span>
             </div>
         </article>
                 
