@@ -5,12 +5,12 @@
     {% for posts in post %}
         <article class="media content-section">
             <div class="media-body">
-                <a class="mr-2" href="#">{{ posts.author }}</a>
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ posts.author }}</a>
+                </div>
                 <h4><a class="article-title" href="#">{{ posts.title }}</a></h4>
                 <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
-                <div class="article-metadata">
-                    <span class="badge badge-success">{{posts.date_posted}}</span>
-                </div>
+                <span class="badge badge-success">{{posts.date_posted}}</span>
             </div>
         </article>
                 
@@ -79,6 +79,9 @@
 
         .account-heading {
         font-size: 2.5rem;
+        }
+        .badge-success{
+            float: right;
         }
     </style>
 {% endblock %}
