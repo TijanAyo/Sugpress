@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Login {% endblock %}
+
+{% block body %}   
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container-fluid home-main">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <fieldset class='border-bottom mb-4'>
+                <legend class="border-bottom mb-4">Get Started <span class="blinker">.</span></legend>
+                {{ form | crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign in</button>
+            </div>
+            </form>
+            <div class="border-top pt-3">
+            <small class="text-muted">Don't have an account?<a  class= 'ml-2' href="{% url 'register' %}">Sign Up</a></small>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+
+

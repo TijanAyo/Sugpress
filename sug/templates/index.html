@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container-fluid home-main">
         <h2>Welcome to Sug Press <span class="blinker">.</span></h2>
-        <button type="button" class="btn btn-default">Login</button>
+        <a href="{% url 'login' %}"><button type="button" class="btn btn-default">Login</button></a>
         <a href="{% url 'register' %}"><button type="button" class="btn btn-default">Register</button></a>
     </div>
     <div class="container-fluid home-content1">

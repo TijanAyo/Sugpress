@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} You are leaving the Site {% endblock %}
+
+{% block body %}
+    <div class="container-fluid home-main">
+        <h2>You have been logged out Successfully</h2>
+        <div class="border-top pt-3">
+            <div class="row">
+                <div class="col">
+                    <a style="text-decoration: none;" href="{% url 'index' %}"><small style="font-family: Georgia, 'Times New Roman', Times, serif;">Return to Homepage</small></a>
+                </div>
+                <div class="col">
+                    <a style="text-decoration: none;" href="{% url 'login' %}"><small style="font-family: Georgia, 'Times New Roman', Times, serif; ">Relogin</small></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        a:hover {
+            color: crimson;
+        }
+    </style>
+
+{% endblock %}
