@@ -7,7 +7,9 @@
         {% csrf_token %}
         <div class="container-fluid home-main">
             {% for message in messages %}
-                {{ message }}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
             {% endfor %}
             <fieldset class='border-bottom mb-4'>
                 <legend class="border-bottom mb-4">Get Started <span class="blinker">.</span></legend>
