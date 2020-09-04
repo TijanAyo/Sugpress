@@ -6,9 +6,32 @@
         <div class="media">
             <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
             <div class="media-body">
-                <h2 class="account-heading">{{ user.username }}</h2>
+                <h3 class="account-heading">{{ user.username }}</h3>
                 <p class="text-secondary">{{ user.email }}</p>
             </div>
         </div>
     </div>
+
+    <style>
+        .content-section
+        {
+            background: #ffffff;
+            padding: 10px 20px;
+            border: 1px solid #dddddd;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+        .account-img {
+            height: 120px;
+            width: 120px;
+            margin-right: 20px;
+            margin-bottom: 16px;
+        }
+          
+        .account-heading {
+            font-size: 2.5rem;
+            font-family:Georgia, 'Times New Roman', Times, serif
+        }
+          
+    </style>
 {% endblock %}
