@@ -9,3 +9,6 @@ def press(request):
 
     context = {'Post':post}
     return render(request, 'press.html', context)
+
+def about(request):
+    return render(request, 'about.html')
