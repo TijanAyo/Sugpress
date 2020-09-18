@@ -3,6 +3,7 @@
 {% block title %} SugPress - News {% endblock %}
 
 {% block body %}
+    <a class="btn btn-outline-info" href="{% url 'create_post' %}" style="margin-top:5px;">Create Post</a>
     {% for posts in Post %}
         <article class="media content-section">
             <img class ="rounded-circle article-img" src="{{ posts.author.profile.image.url }}">
@@ -10,7 +11,7 @@
                 <div class="article-metadata">
                     <a class="mr-2" href="#">{{ posts.author }}</a>
                 </div>
-                <h4><a class="article-title" href="#">{{ posts.title }}</a></h4>
+                <h4><a class="article-title" href="{% url 'post_detail' posts.id %}">{{ posts.title }}</a></h4>
                 <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
                 <span class="badge badge-success">{{posts.date_posted|date:"F j, Y"}}</span>
             </div>

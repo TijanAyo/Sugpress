@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% include 'nav.html' %}
+{% block title %} SugPress - News {% endblock %}
+
+{% block body %}
+    <article class="media content-section">
+        <img class ="rounded-circle article-img" src="{{ posts.author.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ posts.author }}</a>
+            </div>
+            <h4 class="article-title">{{ posts.title }}</h4>
+            <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
+            <span class="badge badge-success">{{posts.date_posted|date:"F j, Y"}}</span>
+            {% if object.author == user %}
+                <a class="btn btn-outline-danger" href="{% url 'delete_post' posts.id %}">Delete</a>
+                <a class="btn btn-outline-secondary" href="{% url 'update_post' posts.id %}">Update</a>
+            {% endif %}
+        </div>
+    </article>
+
+    <style>
+        .article-img {
+        height: 65px;
+        width: 65px;
+        margin-right: 16px;
+        }    
+    </style>
+{% endblock %}
