@@ -11,11 +11,14 @@
             </div>
             <h4 class="article-title">{{ posts.title }}</h4>
             <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
-            <span class="badge badge-success">{{posts.date_posted|date:"F j, Y"}}</span>
             {% if object.author == user %}
-                <a class="btn btn-outline-danger" href="{% url 'delete_post' posts.id %}">Delete</a>
-                <a class="btn btn-outline-secondary" href="{% url 'update_post' posts.id %}">Update</a>
+                <div>
+                    <a class="btn btn-outline-danger" href="{% url 'delete_post' posts.id %}">Delete</a>
+                    <a class="btn btn-outline-secondary" href="{% url 'update_post' posts.id %}">Update</a>
+                </div> 
             {% endif %}
+            <br />
+            <span class="badge badge-success">{{posts.date_posted|date:"F j, Y"}}</span>
         </div>
     </article>
 
