@@ -46,6 +46,7 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+    # Condition to test if the user is the author of the post
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
@@ -56,8 +57,9 @@ class DeletePost(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'post_confirm_delete.html'
     context_object_name = 'posts'
-    success_url = '/press'
+    success_url = '/press'  # Django will know where to redirect to when the deletion is done
 
+    # The same condition to make sure its the author deleting the post
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
