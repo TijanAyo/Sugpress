@@ -9,7 +9,7 @@
             <img class ="rounded-circle article-img" src="{{ posts.author.profile.image.url }}">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="#">{{ posts.author }}</a>
+                    <a class="mr-2" style="font-family: Arial, Helvetica, sans-serif;">{{ posts.author }}</a>
                 </div>
                 <h4><a class="article-title" href="{% url 'post_detail' posts.id %}">{{ posts.title }}</a></h4>
                 <p class="article-content" style="font-family: monospace;">{{ posts.content }}</p>
